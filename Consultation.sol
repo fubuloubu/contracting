@@ -1,3 +1,5 @@
+pragma solidity ^0.4.19;
+
 contract Consultation
 {
     /* Parties
@@ -13,8 +15,8 @@ contract Consultation
      * @dev `client` is providing `payment` for services
      * @dev `deposit` for retaining consultant is non-refundable
      */
-    ether public payment;
-    ether public deposit;
+    uint256 public payment;
+    uint256 public deposit;
 
     /* State of the contract
      * @dev Client can accept terms, setting `accepted` state
@@ -34,8 +36,8 @@ contract Consultation
      */
     function Consultation(address _client,
                           address _arbiter,
-                          ether _payment,
-                          ether _deposit)
+                          uint256 _payment,
+                          uint256 _deposit)
         public
     {
         consultant = msg.sender;
